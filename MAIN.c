@@ -6,12 +6,10 @@
 #include <wchar.h>
 #include <locale.h>
 
-#define MAX_FIBONACCI 50
-#define MAX_FATORIAL 20
 
 
-void calcularFibonacci();
-void calcularFatorial();
+
+
 void verificarPalindromo();
 void verificarSubstring();
 
@@ -79,86 +77,21 @@ void verificarSubstring() {
 }
 
 
-void calcularFibonacci() {
-    int n, i;
-    long long fib[MAX_FIBONACCI];
-
-    printf("Digite quantos números da sequência de Fibonacci quer ver (1-%d): ", MAX_FIBONACCI);
-    scanf("%d", &n);
-
-
-    if(n < 1 || n > MAX_FIBONACCI) {
-        printf("Número inválido, deve ser entre 1 e %d.\n", MAX_FIBONACCI);
-        return;
-    }
-
-
-    fib[0] = 0;
-    if(n > 1) {
-        fib[1] = 1;
-    }
-
-    for(i = 2; i < n; i++) {
-        fib[i] = fib[i-1] + fib[i-2];
-    }
-
-
-    printf("Sequência de Fibonacci: ");
-    for(i = 0; i < n; i++) {
-        printf("%lld ", fib[i]);
-    }
-    printf("\n");
-}
-
-
-void calcularFatorial() {
-    int n, i;
-    long long fat[MAX_FATORIAL];
-
-    printf("Digite um número para calcular os fatoriais (1-%d): ", MAX_FATORIAL);
-    scanf("%d", &n);
-
-
-    if(n < 1 || n > MAX_FATORIAL) {
-        printf("Número inválido, deve ser entre 1 e %d.\n", MAX_FATORIAL);
-        return;
-    }
-
-
-    fat[0] = 1;
-
-    for(i = 1; i < n; i++) {
-        fat[i] = fat[i-1] * (i+1);
-    }
-
-
-    printf("Fatoriais calculados:\n");
-    for(i = 0; i < n; i++) {
-        printf("%d! = %lld\n", i+1, fat[i]);
-    }
-}
 int main() {
     setlocale(LC_ALL, "Portuguese");
-    int opcao;
+   
 
-    printf("Bem-vindo ao programa de cálculos!\n");
+    
 
     do {
-        printf("\nMenu Principal:\n");
-        printf("1 - Sequência de Fibonacci\n");
-        printf("2 - Cálculo de Fatoriais\n");
-        printf("3 - Verificar Palíndromo\n");
-        printf("4 - Verificar Substring\n");
-        printf("0 - Sair\n");
-        printf("Escolha uma opção: ");
-        scanf("%d", &opcao);
+       
 
         switch(opcao) {
             case 1:
-                calcularFibonacci();
+               
                 break;
             case 2:
-                calcularFatorial();
+                
                 break;
             case 3:
                 verificarPalindromo();
@@ -167,10 +100,10 @@ int main() {
                 verificarSubstring();
                 break;
             case 0:
-                printf("Encerrado\n");
+               
                 break;
             default:
-                printf("Opção inválida\n");
+               
         }
 
     } while(opcao != 0);
